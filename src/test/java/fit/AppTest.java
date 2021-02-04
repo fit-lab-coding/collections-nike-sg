@@ -64,13 +64,13 @@ public class AppTest {
         }};
         
 
-        //act
+        //act 
         Map<String, Boolean> attendanceListResult = AttendanceHelper.random(2, 50);
 
         //assert
 
         //same size (due to parameters sent to random method)
-        assertEquals(attendanceListResult.size(), attendanceListResult.size());
+        assertEquals(attendanceListExpected.size(), attendanceListResult.size());
 
         //same percentile of 'true' values due to parameters sent to random method
         assertEquals(
