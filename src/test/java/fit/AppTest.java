@@ -12,7 +12,7 @@ import java.util.Map;
 
 import org.junit.Test;
 
-// import fit.core.AttendanceHelper;
+import fit.core.AttendanceHelper;
 import fit.core.ListUtils;
 
 /**
@@ -55,28 +55,28 @@ public class AppTest {
         assertArrayEquals(expectedResult.toArray(), actualResult.toArray());
     }
 
-    // @Test
-    // public void shouldGenerateRandomAttendanceList() {
-    //     //arrange
-    //     Map<String, Boolean> attendanceListExpected = new HashMap<>() {{
-    //         put("test one", true);
-    //         put("test two", false);
-    //     }};
+    @Test
+    public void shouldGenerateRandomAttendanceList() {
+        //arrange
+        Map<String, Boolean> attendanceListExpected = new HashMap<>() {{
+            put("test one", true);
+            put("test two", false);
+        }};
         
 
-    //     //act 
-    //     Map<String, Boolean> attendanceListResult = AttendanceHelper.random(2, 50);
+        //act 
+        Map<String, Boolean> attendanceListResult = AttendanceHelper.random(2, 50);
 
-    //     //assert
+        //assert
 
-    //     //same size (due to parameters sent to random method)
-    //     assertEquals(attendanceListExpected.size(), attendanceListResult.size());
+        //same size (due to parameters sent to random method)
+        assertEquals(attendanceListExpected.size(), attendanceListResult.size());
 
-    //     //same percentile of 'true' values due to parameters sent to random method
-    //     assertEquals(
-    //         countTrueInList(attendanceListExpected.values()),
-    //         countTrueInList(attendanceListResult.values()));
-    // }
+        //same percentile of 'true' values due to parameters sent to random method
+        assertEquals(
+            countTrueInList(attendanceListExpected.values()),
+            countTrueInList(attendanceListResult.values()));
+    }
 
     private int countTrueInList(Collection<Boolean> items) {
         return Math.toIntExact(items.stream().filter(x -> x).count());
